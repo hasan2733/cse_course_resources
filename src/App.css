@@ -1,0 +1,575 @@
+/* Updated with compact header/footer and improved resource list */
+:root {
+  --primary: #4e89ae;
+  --primary-dark: #3a76a0;
+  --primary-light: #8ba8c8;
+  --light-bg: #f5f7fa;
+  --light-text: #333;
+  --light-card: #ffffff;
+  --light-border: #e0e0e0;
+  --dark-bg: #1a1a2e;
+  --dark-text: #f0f0f0;
+  --dark-card: #16213e;
+  --dark-border: #2c3e50;
+  --notes: #4caf50;
+  --youtube: #ff0000;
+  --slides: #2196f3;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* COMPACT HEADER STYLES */
+header {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.welcome-banner {
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  max-width: 800px;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 0.8rem;
+}
+
+.search-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.search-info p {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.search-input-group {
+  display: flex;
+  width: 100%;
+}
+
+.search-input-group input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-group button {
+  padding: 0 1.2rem;
+  background: white;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header-controls {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 0.8rem;
+}
+
+.theme-toggle,
+.admin-toggle {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admin-login {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.admin-login h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.admin-input-group {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.admin-input-group input {
+  flex: 1;
+  padding: 0.6rem 0.9rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.admin-input-group button {
+  padding: 0.6rem 1rem;
+  background: white;
+  border: none;
+  border-radius: 30px;
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Main Layout */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Resource Form */
+.resource-form {
+  background: var(--light-card);
+  border: 1px solid var(--light-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 1rem;
+  font-size: 0.95rem;
+}
+
+.resource-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.dark-theme .resource-form {
+  background: var(--dark-card);
+  border-color: var(--dark-border);
+}
+
+.form-group {
+  margin-bottom: 0.8rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.student-info h3 {
+  margin: 1rem 0 0.8rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--light-border);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  padding: 0.8rem 1.2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-buttons button:hover {
+  background: var(--primary-dark);
+}
+
+.cancel-button {
+  background: #6c757d !important;
+}
+
+/* ENHANCED RESOURCE LIST */
+.resource-list h2 {
+  margin-bottom: 1.2rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.resources-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.resource-card {
+  background: var(--light-card);
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  border: 1px solid var(--light-border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dark-theme .resource-card {
+  background: var(--dark-card);
+  border-color: var(--dark-border);
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.course-code {
+  background: #e3f2fd;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.dark-theme .course-code {
+  background: #0d47a1;
+  color: white;
+}
+
+.resource-type {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.resource-type.notes { background: var(--notes); }
+.resource-type.youtube { background: var(--youtube); }
+.resource-type.slides { background: var(--slides); }
+
+.resource-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.resource-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.student-details {
+  margin: 0.8rem 0;
+  font-size: 0.85rem;
+}
+
+.student-details p {
+  margin: 0.3rem 0;
+  font-size: 0.85rem;
+}
+
+.resource-link {
+  margin-top: 0.6rem;
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.resource-link:hover {
+  background: var(--primary-dark);
+}
+
+.admin-controls {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.admin-controls button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: var(--warning);
+  color: #333;
+}
+
+.delete-btn {
+  background: var(--danger);
+  color: white;
+}
+
+/* COMPACT FOOTER */
+.about-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.developer-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.developer-details {
+  flex: 1;
+  min-width: 300px;
+}
+
+.developer-details p {
+  margin-bottom: 0.6rem;
+  display: flex;
+}
+
+.developer-details strong {
+  min-width: 100px;
+  display: inline-block;
+}
+
+.university-logo {
+  flex: 0 0 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-placeholder {
+  width: 70px;
+  height: 70px;
+  background: white;
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.project-description {
+  font-style: italic;
+  margin: 0.8rem auto;
+  text-align: center;
+  padding: 0.8rem;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  max-width: 800px;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0.2rem 0;
+}
+
+/* Other styles */
+.message-banner {
+  background: var(--success);
+  color: white;
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-size: 0.95rem;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 0.8rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0.7rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .welcome-banner {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .search-container {
+    margin-bottom: 0.6rem;
+  }
+  
+  .header-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  main {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .resource-form {
+    padding: 1.2rem;
+  }
+  
+  .about-section {
+    padding: 1.2rem;
+  }
+  
+  .developer-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .developer-details {
+    text-align: left;
+  }
+  
+  .developer-details p {
+    justify-content: center;
+  }
+  
+  .admin-input-group {
+    flex-direction: column;
+  }
+}
