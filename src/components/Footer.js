@@ -22,7 +22,7 @@ const Footer = () => (
         All resources are shared by students for educational purposes only.
       </p>
       <div className="footer-bottom">
-        <p>© 2023 Course Resource Hub | All Rights Reserved</p>
+        <p>© 2025 Course Resource Hub | All Rights Reserved</p>
         <p>Data stored in your browser using localStorage</p>
       </div>
     </div>
