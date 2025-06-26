@@ -9,7 +9,8 @@ const Footer = () => (
           <p><strong>Name:</strong> Abid Hasan</p>
           <p><strong>University:</strong> Southeast University</p>
           <p><strong>Department:</strong> Computer Science & Engineering</p>
-          <p><strong>Semester:</strong> 5th Trimester</p>
+          <p><strong>Semester:</strong> 6th Trimester</p>
+          <p><strong>Current CGPA:</strong> 4.00</p>
           <p><strong>Project:</strong> Course Resource Hub</p>
         </div>
         <div className="university-logo">
